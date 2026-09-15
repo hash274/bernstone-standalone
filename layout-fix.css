@@ -1,0 +1,46 @@
+/* Compact layout and exact mobile content width */
+@media (min-width: 681px) {
+  .wrap { max-width: 1120px; }
+  .hero__grid { min-height: 610px; gap: 42px; padding-top: 48px; padding-bottom: 58px; }
+  .hero__visual { min-height: 420px; }
+  .benefits, .gallery, .faq { padding-top: 92px; padding-bottom: 92px; }
+  .collections, .pricing { padding-top: 88px; padding-bottom: 88px; }
+  .process { padding-top: 90px; padding-bottom: 90px; }
+  .collection-card__swatch { height: 190px; }
+  .gallery__item { aspect-ratio: 4 / 5; }
+  .contact { padding-top: 80px; padding-bottom: 80px; }
+}
+
+@media (max-width: 680px) {
+  .wrap {
+    width: 300px;
+    max-width: calc(100% - 20px);
+  }
+
+  .header__row { width: 300px; max-width: calc(100% - 20px); }
+  .hero__grid { padding-top: 48px; padding-bottom: 54px; }
+  .hero__title { font-size: 64px; }
+  .hero__lead { font-size: 13px; line-height: 1.55; }
+  .hero__stats { flex-wrap: wrap; row-gap: 18px; margin-top: 34px; }
+  .hero__stats div { min-width: 135px; }
+  .hero__visual { min-height: 290px; }
+  .stack { padding: 20px; }
+  .stack__row { height: 40px; }
+  .section-head h2 { font-size: 58px; }
+  .benefits, .gallery, .faq { padding-top: 72px; padding-bottom: 72px; }
+  .collections, .pricing { padding-top: 70px; padding-bottom: 70px; }
+  .process { padding-top: 72px; padding-bottom: 72px; }
+  .benefits__grid, .collections__grid { grid-template-columns: 1fr; gap: 14px; }
+  .benefit { padding: 23px 20px; }
+  .collection-card__swatch { height: 210px; }
+  .process__list { margin-top: 38px; }
+  .promo { width: 300px; max-width: calc(100% - 20px); margin-left: auto; margin-right: auto; padding: 42px 20px; }
+  .promo__inner { width: auto; }
+  .gallery__grid { grid-template-columns: 1fr; gap: 14px; }
+  .gallery__item { aspect-ratio: 1 / .78; }
+  .pricing__row { grid-template-columns: 1.35fr .8fr 1fr; padding: 15px 10px; font-size: 11px; }
+  .contact { padding-top: 72px; padding-bottom: 72px; }
+  .contact__grid { width: 300px; max-width: calc(100% - 20px); margin: 0 auto; padding: 25px 20px; }
+  .contact__intro h2 { font-size: 58px; }
+  .footer__grid { width: 300px; max-width: calc(100% - 20px); }
+}
