@@ -1,22 +1,914 @@
 <!doctype html>
 <html lang="uk">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bernstone — створюємо простір навколо дому</title>
-<style>
-:root{--green:#123526;--paper:#f7f8f7;--ink:#17201d;--muted:#77827c;--line:#dce2de;--r:25px;--max:1120px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 'DM Sans',Arial,sans-serif}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 80px));margin:auto}img{display:block;max-width:100%}.header{height:78px;background:#f7f8f7ee;backdrop-filter:blur(14px);position:sticky;top:0;z-index:3}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between}.logo img{width:156px}.header nav{display:flex;align-items:center;gap:31px;font-size:12px;font-weight:600}.nav-cta,.button{background:var(--green);color:#fff;border-radius:999px;padding:12px 18px}.nav-cta span,.button span{margin-left:8px;color:#c4dfcf}.menu-toggle{display:none;border:0;background:none}.menu-toggle i{display:block;width:22px;height:2px;background:var(--green);margin:5px}.hero{background:#fff;border-radius:0 0 30px 30px;padding-top:48px}.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;min-height:560px}.kicker{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.14em;margin:0 0 23px}.hero h1,h2{font-weight:700;letter-spacing:-.075em;line-height:.94;margin:0}.hero h1{font-size:clamp(58px,7vw,94px)}em{font-style:normal;color:var(--green)}.hero-lead{max-width:400px;color:#5e6963;line-height:1.65;margin:29px 0}.hero-actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;border:0;font-size:12px;font-weight:700}.under-link{font-size:12px;font-weight:700;border-bottom:1px solid #a9b3ad;padding-bottom:4px}.under-link b{font-size:19px;margin-left:9px}.hero-collage{height:500px;position:relative}.hero-image{position:absolute;background-size:cover;background-position:center;border-radius:var(--r)}.hero-image-main{left:0;bottom:18px;width:58%;height:58%;background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85')}.hero-image-tall{right:7%;top:0;width:37%;height:75%;background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=85')}.hero-image-small{right:0;bottom:0;width:34%;height:38%;background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=85')}.hero-note{position:absolute;left:60%;bottom:7%;font-size:10px;color:var(--muted)}.hero-note span{display:block;color:var(--ink);font-weight:600}.hero-bottom{display:flex;gap:30px;border-top:1px solid var(--line);padding:20px 0;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.cross{color:var(--green);font-size:18px}.section{padding:125px 0}.about-grid,.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:120px}.section h2{font-size:clamp(55px,6vw,82px)}.large-copy{font-size:23px;line-height:1.35}.about-copy{max-width:490px;padding-top:25px;color:var(--muted)}.about-copy>p:not(.large-copy),.contact-grid>div>p:not(.kicker){font-size:14px;line-height:1.7}.section-head{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:55px}.section-head>p{max-width:285px;color:var(--muted);font-size:13px}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service-card{min-height:330px;border-radius:var(--r);padding:25px;position:relative;overflow:hidden}.service-dark{background:var(--green);color:#fff}.service-light{background:#fff;border:1px solid var(--line)}.card-number{position:absolute;right:24px;top:24px;color:#88a195}.card-icon{font-size:28px;margin-bottom:53px}.service-card h3{font-size:24px;line-height:1.05;letter-spacing:-.06em}.service-card p{font-size:12px;color:var(--muted);max-width:220px}.service-dark p{color:#b5cbc0}.service-card a{position:absolute;bottom:25px;font-size:11px;font-weight:700}.service-photo{color:#fff;padding:0}.service-photo-bg{position:absolute;inset:0;background:linear-gradient(0deg,#102e22da,#102e2208),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85') center/cover}.service-photo-content{position:absolute;left:25px;bottom:25px}.statement{background:var(--green);color:#fff;padding:125px 0;border-radius:28px;margin:0 20px}.statement h2{font-size:clamp(64px,8vw,110px)}.statement h2 em{color:#b8d9c5}.statement-footer{display:flex;justify-content:space-between;margin-top:42px;color:#b4c8bd}.project-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:16px}.project-photo{height:330px;border-radius:var(--r);background-size:cover;background-position:center}.project-wide .project-photo{height:440px}.project-one{background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85')}.project-two{background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=85')}.project-three{background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=700&q=85')}.project-caption{display:flex;flex-direction:column;padding:14px 2px;font-size:11px}.project-caption span{color:var(--muted)}.numbers{background:#eaf1ed;padding:55px 0}.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}.numbers-grid>div{display:flex;align-items:center;gap:14px;border-right:1px solid #cbd9d0}.numbers strong{font-size:40px;letter-spacing:-.08em}.numbers p{font-size:10px;text-transform:uppercase;color:var(--muted)}.contact{padding-bottom:125px}.contact-grid>div{padding-top:20px}.phone{font-size:22px;font-weight:700;color:var(--green)}.contact form{display:flex;flex-direction:column;gap:17px;background:#fff;border-radius:var(--r);padding:30px}.contact label{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;gap:7px}.contact input,.contact textarea{border:0;border-bottom:1px solid var(--line);padding:10px 0;outline:0;resize:vertical}.contact form p{min-height:18px;font-size:12px}.footer{background:#fff;border-top:1px solid var(--line);padding:45px 0}.footer-inner{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:30px}.footer p,.footer-meta{font-size:11px;color:var(--muted)}.footer-links{display:flex;flex-direction:column;gap:8px;font-size:12px}.footer-meta{text-align:right}.fade-in{animation:rise .8s both}.delay{animation-delay:.15s}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@media(max-width:900px){.container{width:calc(100% - 44px)}.service-grid{grid-template-columns:1fr 1fr}.service-photo{grid-column:span 2}.project-grid{grid-template-columns:1fr 1fr}.project-wide{grid-column:span 2}.numbers-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}}@media(max-width:680px){.container{width:min(300px,calc(100% - 24px))}.header{height:70px}.header nav{position:absolute;top:70px;left:0;right:0;background:#fff;display:flex;flex-direction:column;gap:0;padding:12px 24px;opacity:0;visibility:hidden}.header nav.open{opacity:1;visibility:visible}.header nav a{padding:13px 0;border-bottom:1px solid var(--line)}.menu-toggle{display:block}.hero{padding-top:25px}.hero-grid{display:flex;flex-direction:column;gap:30px;min-height:0}.hero h1{font-size:63px}.hero-collage{height:300px}.hero-bottom{flex-wrap:wrap;gap:10px 15px;font-size:8px}.section{padding:78px 0}.about-grid,.contact-grid{grid-template-columns:1fr;gap:42px}.section h2{font-size:56px}.section-head{display:block}.service-grid,.project-grid{grid-template-columns:1fr}.service-photo,.project-wide{grid-column:auto}.service-card{min-height:290px}.statement{margin:0 12px;padding:78px 0}.statement h2{font-size:63px}.project-photo,.project-wide .project-photo{height:280px}.numbers-grid{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr 1fr}.footer-inner>.logo{grid-column:span 2}.footer-meta{text-align:left}}
-</style>
-<style>.logo img{content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='312' height='70' viewBox='0 0 312 70'%3E%3Crect width='312' height='70' fill='%23fff'/%3E%3Ctext x='0' y='51' font-family='Arial,sans-serif' font-size='45' font-weight='700' letter-spacing='-1'%3EBERNSTONE%3C/text%3E%3Ctext x='282' y='19' font-family='Arial,sans-serif' font-size='16' font-weight='700'%3E®%3C/text%3E%3C/svg%3E")}</style>
-</head>
-<body>
-<header class="header"><div class="container header-inner"><a class="logo" href="#top"><img src="image.png" alt="Bernstone"></a><nav id="siteNav"><a href="#about">Про нас</a><a href="#services">Рішення</a><a href="#projects">Проєкти</a><a href="#contact" class="nav-cta">Зв'язатися <span>↗</span></a></nav><button class="menu-toggle" id="menuToggle" aria-label="Меню" aria-expanded="false"><i></i><i></i></button></div></header>
-<main id="top"><section class="hero"><div class="container hero-grid"><div class="hero-copy fade-in"><p class="kicker">BERNSTONE / БЕТОННІ РІШЕННЯ</p><h1>Створюємо<br><em>простір</em><br>навколо дому.</h1><p class="hero-lead">Виготовляємо бетонні блоки, з яких народжуються сучасні паркани, тераси та приватні простори з характером.</p><div class="hero-actions"><a class="button" href="#contact">Отримати консультацію <span>↗</span></a><a class="under-link" href="#projects">Дивитися проєкти <b>→</b></a></div></div><div class="hero-collage fade-in delay"><div class="hero-image hero-image-main"></div><div class="hero-image hero-image-tall"></div><div class="hero-image hero-image-small"></div><div class="hero-note">01 / 04<br><span>Матеріал,<br>який залишається</span></div></div></div><div class="container hero-bottom"><span>Бетонні блоки для життя</span><span class="cross">✣</span><span>Виробництво в Україні</span><span class="cross">✣</span><span>Доставка та монтаж</span></div></section>
-<section class="about section" id="about"><div class="container about-grid"><div><p class="kicker">01 / ПРО BERNSTONE</p><h2>Будуємо<br><em>надійне.</em></h2></div><div class="about-copy"><p class="large-copy">Ми віримо, що хороша огорожа — це не межа, а продовження архітектури вашого дому.</p><p>Bernstone поєднує чесний матеріал, точну геометрію та простий процес. Підбираємо блоки під стиль будинку, допомагаємо з розрахунком і доставляємо готове рішення на вашу ділянку.</p><a class="under-link" href="#contact">Дізнатися більше <b>→</b></a></div></div></section>
-<section class="services section" id="services"><div class="container"><div class="section-head"><div><p class="kicker">02 / РІШЕННЯ</p><h2>Все необхідне<br><em>в одному місці.</em></h2></div><p>Від першого ескізу до останнього блоку. Збираємо рішення, які працюють роками.</p></div><div class="service-grid"><article class="service-card service-dark"><span class="card-number">01</span><div class="card-icon">▱</div><h3>Блоки<br>для парканів</h3><p>Гладкі, колоті та декоративні фактури для сучасних огорож.</p><a href="#contact">Дивитися каталог <b>→</b></a></article><article class="service-card service-light"><span class="card-number">02</span><div class="card-icon">⌂</div><h3>Стовпи<br>та конструкції</h3><p>Система, у якій кожен елемент точно стає на своє місце.</p><a href="#contact">Підібрати рішення <b>→</b></a></article><article class="service-card service-photo"><span class="card-number">03</span><div class="service-photo-bg"></div><div class="service-photo-content"><h3>Монтаж<br>під ключ</h3><a href="#contact">Як це працює <b>→</b></a></div></article></div></div></section>
-<section class="statement"><div class="container"><p class="kicker">BERNSTONE / МАТЕРІАЛ І ФОРМА</p><h2>Сильні речі<br><em>не потребують</em><br>зайвого.</h2><div class="statement-footer"><p>Лаконічна архітектура. Тактильний бетон. Дім, до якого хочеться повертатися.</p><span>✣</span></div></div></section>
-<section class="projects section" id="projects"><div class="container"><div class="section-head"><div><p class="kicker">03 / ПРОЄКТИ</p><h2>Реалізуємо<br><em>з характером.</em></h2></div><a class="under-link" href="#contact">Усі проєкти <b>→</b></a></div><div class="project-grid"><article class="project project-wide"><div class="project-photo project-one"></div><div class="project-caption"><strong>Private house / Буча</strong><span>Колотий блок · графіт</span></div></article><article class="project"><div class="project-photo project-two"></div><div class="project-caption"><strong>Garden wall / Київ</strong><span>Модерн · теплий сірий</span></div></article><article class="project"><div class="project-photo project-three"></div><div class="project-caption"><strong>Courtyard / Львів</strong><span>Антік · натуральна фактура</span></div></article></div></div></section>
-<section class="numbers"><div class="container numbers-grid"><div><strong>20<span>+</span></strong><p>років досвіду<br>у виробництві</p></div><div><strong>7</strong><p>фактур і<br>колекцій</p></div><div><strong>1–3</strong><p>дні на монтаж<br>середньої ділянки</p></div><div><strong>100<span>%</span></strong><p>уваги до<br>вашого проєкту</p></div></div></section>
-<section class="contact section" id="contact"><div class="container contact-grid"><div><p class="kicker">04 / ВАШ ПРОЄКТ</p><h2>Розкажіть<br><em>нам про нього.</em></h2><p>Підберемо матеріал, порахуємо кількість блоків і підкажемо оптимальний спосіб монтажу.</p><a class="phone" href="tel:+380734336003">+38 (073) 433-60-03 ↗</a></div><form id="contactForm"><label>Ім'я<input type="text" name="name" placeholder="Ваше ім'я" required></label><label>Телефон<input type="tel" name="phone" placeholder="+380" required></label><label>Коротко про проєкт<textarea name="message" rows="3" placeholder="Наприклад: паркан 40 м, висота 2 м"></textarea></label><button class="button" type="submit">Надіслати запит <span>↗</span></button><p id="formStatus" role="status"></p></form></div></section></main>
-<footer class="footer"><div class="container footer-inner"><a class="logo" href="#top"><img src="image.png" alt="Bernstone"></a><p>Бетонні рішення<br>для сучасного дому.</p><div class="footer-links"><a href="#about">Про нас</a><a href="#services">Рішення</a><a href="#contact">Контакти</a></div><div class="footer-meta">© Bernstone, 2025<br>Instagram ↗</div></div></footer>
-<script>document.querySelectorAll('.logo img').forEach(image=>image.removeAttribute('src'));</script>
-<script>const menuToggle=document.querySelector('#menuToggle'),siteNav=document.querySelector('#siteNav');menuToggle.addEventListener('click',()=>{const open=siteNav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open))});siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{siteNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')}));const form=document.querySelector('#contactForm'),status=document.querySelector('#formStatus');form.addEventListener('submit',event=>{event.preventDefault();const name=form.elements.name.value.trim(),phone=form.elements.phone.value.trim();if(name.length<2||phone.replace(/\D/g,'').length<10){status.textContent='Вкажіть ім’я та коректний номер телефону.';status.style.color='#9b3e2e';return}status.textContent='Дякуємо! Ми зв’яжемося з вами найближчим часом.';status.style.color='#236442';form.reset()});</script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bernstone — створюємо простір навколо дому</title>
+    <style>
+      :root {
+        --green: #123526;
+        --paper: #f7f8f7;
+        --ink: #17201d;
+        --muted: #77827c;
+        --line: #dce2de;
+        --r: 25px;
+        --max: 1120px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          15px/1.5 "DM Sans",
+          Arial,
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: min(var(--max), calc(100% - 80px));
+        margin: auto;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .header {
+        height: 78px;
+        background: #f7f8f7ee;
+        backdrop-filter: blur(14px);
+        position: sticky;
+        top: 0;
+        z-index: 3;
+      }
+      .header-inner {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo img {
+        width: 156px;
+      }
+      .header nav {
+        display: flex;
+        align-items: center;
+        gap: 31px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .nav-cta,
+      .button {
+        background: var(--green);
+        color: #fff;
+        border-radius: 999px;
+        padding: 12px 18px;
+      }
+      .nav-cta span,
+      .button span {
+        margin-left: 8px;
+        color: #c4dfcf;
+      }
+      .menu-toggle {
+        display: none;
+        border: 0;
+        background: none;
+      }
+      .menu-toggle i {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--green);
+        margin: 5px;
+      }
+      .hero {
+        background: #fff;
+        border-radius: 0 0 30px 30px;
+        padding-top: 48px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+        min-height: 560px;
+      }
+      .kicker {
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        margin: 0 0 23px;
+      }
+      .hero h1,
+      h2 {
+        font-weight: 700;
+        letter-spacing: -0.075em;
+        line-height: 0.94;
+        margin: 0;
+      }
+      .hero h1 {
+        font-size: clamp(58px, 7vw, 94px);
+      }
+      em {
+        font-style: normal;
+        color: var(--green);
+      }
+      .hero-lead {
+        max-width: 400px;
+        color: #5e6963;
+        line-height: 1.65;
+        margin: 29px 0;
+      }
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .under-link {
+        font-size: 12px;
+        font-weight: 700;
+        border-bottom: 1px solid #a9b3ad;
+        padding-bottom: 4px;
+      }
+      .under-link b {
+        font-size: 19px;
+        margin-left: 9px;
+      }
+      .hero-collage {
+        height: 500px;
+        position: relative;
+      }
+      .hero-image {
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--r);
+      }
+      .hero-image-main {
+        left: 0;
+        bottom: 18px;
+        width: 58%;
+        height: 58%;
+        background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85");
+      }
+      .hero-image-tall {
+        right: 7%;
+        top: 0;
+        width: 37%;
+        height: 75%;
+        background-image: url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=85");
+      }
+      .hero-image-small {
+        right: 0;
+        bottom: 0;
+        width: 34%;
+        height: 38%;
+        background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=85");
+      }
+      .hero-note {
+        position: absolute;
+        left: 60%;
+        bottom: 7%;
+        font-size: 10px;
+        color: var(--muted);
+      }
+      .hero-note span {
+        display: block;
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .hero-bottom {
+        display: flex;
+        gap: 30px;
+        border-top: 1px solid var(--line);
+        padding: 20px 0;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      .cross {
+        color: var(--green);
+        font-size: 18px;
+      }
+      .section {
+        padding: 125px 0;
+      }
+      .about-grid,
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 120px;
+      }
+      .section h2 {
+        font-size: clamp(55px, 6vw, 82px);
+      }
+      .large-copy {
+        font-size: 23px;
+        line-height: 1.35;
+      }
+      .about-copy {
+        max-width: 490px;
+        padding-top: 25px;
+        color: var(--muted);
+      }
+      .about-copy > p:not(.large-copy),
+      .contact-grid > div > p:not(.kicker) {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 50px;
+        margin-bottom: 55px;
+      }
+      .section-head > p {
+        max-width: 285px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .service-card {
+        min-height: 330px;
+        border-radius: var(--r);
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+      }
+      .service-dark {
+        background: var(--green);
+        color: #fff;
+      }
+      .service-light {
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+      .card-number {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        color: #88a195;
+      }
+      .card-icon {
+        font-size: 28px;
+        margin-bottom: 53px;
+      }
+      .service-card h3 {
+        font-size: 24px;
+        line-height: 1.05;
+        letter-spacing: -0.06em;
+      }
+      .service-card p {
+        font-size: 12px;
+        color: var(--muted);
+        max-width: 220px;
+      }
+      .service-dark p {
+        color: #b5cbc0;
+      }
+      .service-card a {
+        position: absolute;
+        bottom: 25px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .service-photo {
+        color: #fff;
+        padding: 0;
+      }
+      .service-photo-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(0deg, #102e22da, #102e2208),
+          url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85")
+            center/cover;
+      }
+      .service-photo-content {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+      }
+      .statement {
+        background: var(--green);
+        color: #fff;
+        padding: 125px 0;
+        border-radius: 28px;
+        margin: 0 20px;
+      }
+      .statement h2 {
+        font-size: clamp(64px, 8vw, 110px);
+      }
+      .statement h2 em {
+        color: #b8d9c5;
+      }
+      .statement-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 42px;
+        color: #b4c8bd;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr 0.8fr;
+        gap: 16px;
+      }
+      .project-photo {
+        height: 330px;
+        border-radius: var(--r);
+        background-size: cover;
+        background-position: center;
+      }
+      .project-wide .project-photo {
+        height: 440px;
+      }
+      .project-one {
+        background-image: url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85");
+      }
+      .project-two {
+        background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=85");
+      }
+      .project-three {
+        background-image: url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=700&q=85");
+      }
+      .project-caption {
+        display: flex;
+        flex-direction: column;
+        padding: 14px 2px;
+        font-size: 11px;
+      }
+      .project-caption span {
+        color: var(--muted);
+      }
+      .numbers {
+        background: #eaf1ed;
+        padding: 55px 0;
+      }
+      .numbers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+      .numbers-grid > div {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-right: 1px solid #cbd9d0;
+      }
+      .numbers strong {
+        font-size: 40px;
+        letter-spacing: -0.08em;
+      }
+      .numbers p {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .contact {
+        padding-bottom: 125px;
+      }
+      .contact-grid > div {
+        padding-top: 20px;
+      }
+      .phone {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--green);
+      }
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        background: #fff;
+        border-radius: var(--r);
+        padding: 30px;
+      }
+      .contact label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--muted);
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .contact input,
+      .contact textarea {
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 10px 0;
+        outline: 0;
+        resize: vertical;
+      }
+      .contact form p {
+        min-height: 18px;
+        font-size: 12px;
+      }
+      .footer {
+        background: #fff;
+        border-top: 1px solid var(--line);
+        padding: 45px 0;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr 1fr;
+        gap: 30px;
+      }
+      .footer p,
+      .footer-meta {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+      }
+      .footer-meta {
+        text-align: right;
+      }
+      .fade-in {
+        animation: rise 0.8s both;
+      }
+      .delay {
+        animation-delay: 0.15s;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (max-width: 900px) {
+        .container {
+          width: calc(100% - 44px);
+        }
+        .service-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .service-photo {
+          grid-column: span 2;
+        }
+        .project-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .project-wide {
+          grid-column: span 2;
+        }
+        .numbers-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 680px) {
+        .container {
+          width: min(300px, calc(100% - 24px));
+        }
+        .header {
+          height: 70px;
+        }
+        .header nav {
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          padding: 12px 24px;
+          opacity: 0;
+          visibility: hidden;
+        }
+        .header nav.open {
+          opacity: 1;
+          visibility: visible;
+        }
+        .header nav a {
+          padding: 13px 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .hero {
+          padding-top: 25px;
+        }
+        .hero-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          min-height: 0;
+        }
+        .hero h1 {
+          font-size: 63px;
+        }
+        .hero-collage {
+          height: 300px;
+        }
+        .hero-bottom {
+          flex-wrap: wrap;
+          gap: 10px 15px;
+          font-size: 8px;
+        }
+        .section {
+          padding: 78px 0;
+        }
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 42px;
+        }
+        .section h2 {
+          font-size: 56px;
+        }
+        .section-head {
+          display: block;
+        }
+        .service-grid,
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+        .service-photo,
+        .project-wide {
+          grid-column: auto;
+        }
+        .service-card {
+          min-height: 290px;
+        }
+        .statement {
+          margin: 0 12px;
+          padding: 78px 0;
+        }
+        .statement h2 {
+          font-size: 63px;
+        }
+        .project-photo,
+        .project-wide .project-photo {
+          height: 280px;
+        }
+        .numbers-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-inner > .logo {
+          grid-column: span 2;
+        }
+        .footer-meta {
+          text-align: left;
+        }
+      }
+    </style>
+    <style>
+      .logo img {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='312' height='70' viewBox='0 0 312 70'%3E%3Crect width='312' height='70' fill='%23fff'/%3E%3Ctext x='0' y='51' font-family='Arial,sans-serif' font-size='45' font-weight='700' letter-spacing='-1'%3EBERNSTONE%3C/text%3E%3Ctext x='282' y='19' font-family='Arial,sans-serif' font-size='16' font-weight='700'%3E®%3C/text%3E%3C/svg%3E");
+      }
+    </style>
+    <style>
+      :root { --green:#ffe168; --green-2:#ffe168; --paper:#fff; --ink:#444348; --muted:#8f8f91; --line:#e5e5e5; }
+      body { background:#fff; color:#444348; }
+      .header { background:rgba(255,255,255,.94); border-bottom:1px solid #e5e5e5; }
+      .header nav a:not(.nav-cta):hover, .footer a:hover { color:#444348; }
+      .nav-cta, .button { background:#ffe168; color:#444348; }
+      .nav-cta span, .button span { color:#444348; }
+      .hero { background:#fff; }
+      em { color:#444348; }
+      .service-dark { background:#444348; }
+      .statement { background:#444348; }
+      .statement h2, .statement h2 em { color:#fff; }
+      .numbers { background:#f5f5f5; }
+      .numbers strong span { color:#444348; }
+      .contact { background:#ffe168; }
+      .phone { color:#444348; }
+      .footer { background:#444348; color:#fff; border-top:0; }
+      .footer p, .footer-meta { color:#d0d0d2; }
+      .footer-links a, .footer-meta a { color:#fff; }
+      .footer .logo { background:#fff; border-radius:8px; padding:5px 10px; width:max-content; }
+      body, .header nav, .kicker, .hero-lead, .hero-note, .hero-bottom,
+      .button, .under-link, .section-head > p, .service-card p,
+      .service-card a, .card-number, .project-caption, .numbers p,
+      .contact label, .contact form p, .footer p, .footer-links, .footer-meta {
+        font-size: 16px;
+      }
+      @media (max-width:680px) { .header nav { background:#fff; } }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="#top"
+          ><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKMAAAAtCAYAAADC1tsoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS6SURBVHhe7ZsNUuMwDIXTvRhwMuBkwMl2/Uoe81aV/JMmqZnRN6NpGsu2ZL8oSRkufwtLkkzAn/UzSR5OijGZhhRjMg0pxmQaUozJNOTbdLI7n5+fy/v7+/ptWZ6enpa3t7f1W0xWxmRXIMSXl5fl9fV1+fj4uBrAuRYpxmRXUBEhQIjvcrlc7fn5uas65m062RWID5LCJ6rj19fX9TyOKdQQiDFJ9qAI7W+pgtdjSItWhPhzrkZWxmRXbGVkNcSzJKjdqlOMya6o2PCsCBHiky811edGiDFJ9gS3ZUgLn7ht87hFVsZBeLsBuOLPghXmN4EqiJi7475K0gFNLYPqI8WjzesTmeK1W6vNzSvTM4v19eCDufqpoQ0+xPOpGfpbanMi5ih3ov7e+Arn8dBxWnYvYWXEA2gvJZmbV3Y8I2gVaaFhjMxdNuXmOQTf9S8ACuJEvMT62uXQdvbDb2aAP1sgT43D+4GXa6FzE/sbHHx1DJ0Xc3IsL3di19DmrXCvPClwnKivYjUwDMTogaYRw5WslOBdv8gUr71mtkrgu+cHa/kq2mbzG4Vj2fk9OGfkq3FFPmxH3PjEfkRwrzw4zhl0/QUGV0Xx/bGyADdXCq/WCO3vWYQ3N0yJqiBRf1azEbx8j4KVDnNGVQ/nWYVauSNuGPantUePZtOfA7EYVhBbNnkLmBs2ejGQkU1hTmcJEfSuI0UGWvlwr1rCfTSb/zZtN4jPUWdhL4YaunFbOLOicK6oKipc81Z8vaJ9NJvF2LNYR2IXtrXQerH0VgitKGdsJOfovXDo11NNmcvMguwWI2+PMLx96YZiUVriRB/Pti6O3YDW/LrBvXOiD/shVub/G2EeU9+qy0uBC5p6zaMk7/pa895StR3jwEfNG1spVeC/Ns6h/XjO+npYHxrOc5wWHAOfERgLPoizh5o/Y1SYv42Z5z04Ts1qOY2w+TatHFktUMVa1bQsxnrUz0iFQH5lra7z6FwYgxXzN8DYt1THItjQduNbk7egSQ3qV7PtJai15zf4ru22P81D+7XMGwPn1IeVgJUExnitby8YS/vaamOhrxcvYXx2LSNq/ozLwn3ReHnOIxrnCLrEGC1OzYcJ0kbQfjWL4orECOz5rWIkzDOKhRwhRo7p+eM8zOLNwRw8onGO4K7bdEliPTruLQ1zlDh/zM45Oq/234MiiPVoP0ZzGvlZjfkftV/3cJcYH5GQ3fzR5x/tP9ubJYRyhli4BrMJcpMYkQQe3JVWxUGfmvWiGwZG+oJ7+npwjL1/9O+5UOgz+gJF/9kuxvBhAE0jhucXpWy66xeZoucxjsWOrc+EALHU2muxjcDnL5jN38KYWn69YzKHyIdjRLA/5uOxR2ucPQlnYRA95i1IbcM9U/Q8xrHohnk+3HiaFaPtr6ZgHIwNw7Ga5ofvLeAz6qvj03Rem7dCnwhvDTzYxnWo2b1sFiMDsBtN0Ob1i0zR81GSdnyNw27mVjHCr5UH5uqBMY342zzUonUh9Kthc/PQ9pbdS/7bwQD6jFk2cj06Hvtse+bcZ5JiTKZhlz8HJskepBiTaUgxJtOQYkymIcWYTEOKMZmGFGMyDSnGZBpSjMk0pBiTSViWfyat07lCWxFhAAAAAElFTkSuQmCC"
+            alt="Bernstone"
+        /></a>
+        <nav id="siteNav">
+          <a href="#about">Про нас</a><a href="#services">Рішення</a
+          ><a href="#projects">Проєкти</a
+          ><a href="#contact" class="nav-cta">Зв'язатися <span>↗</span></a>
+        </nav>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Меню"
+          aria-expanded="false"
+        >
+          <i></i><i></i>
+        </button>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy fade-in">
+            <p class="kicker">BERNSTONE / БЕТОННІ РІШЕННЯ</p>
+            <h1>Створюємо<br /><em>простір</em><br />навколо дому.</h1>
+            <p class="hero-lead">
+              Виготовляємо бетонні блоки, з яких народжуються сучасні паркани,
+              тераси та приватні простори з характером.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#contact"
+                >Отримати консультацію <span>↗</span></a
+              ><a class="under-link" href="#projects"
+                >Дивитися проєкти <b>→</b></a
+              >
+            </div>
+          </div>
+          <div class="hero-collage fade-in delay">
+            <div class="hero-image hero-image-main"></div>
+            <div class="hero-image hero-image-tall"></div>
+            <div class="hero-image hero-image-small"></div>
+            <div class="hero-note">
+              01 / 04<br /><span>Матеріал,<br />який залишається</span>
+            </div>
+          </div>
+        </div>
+        <div class="container hero-bottom">
+          <span>Бетонні блоки для життя</span>
+          <span>Виробництво в Україні</span>
+          <span>Доставка та монтаж</span>
+        </div>
+      </section>
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div>
+            <p class="kicker">01 / ПРО BERNSTONE</p>
+            <h2>Будуємо<br /><em>надійне.</em></h2>
+          </div>
+          <div class="about-copy">
+            <p class="large-copy">
+              Ми віримо, що хороша огорожа — це не межа, а продовження
+              архітектури вашого дому.
+            </p>
+            <p>
+              Bernstone поєднує чесний матеріал, точну геометрію та простий
+              процес. Підбираємо блоки під стиль будинку, допомагаємо з
+              розрахунком і доставляємо готове рішення на вашу ділянку.
+            </p>
+            <a class="under-link" href="#contact">Дізнатися більше <b>→</b></a>
+          </div>
+        </div>
+      </section>
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="kicker">02 / РІШЕННЯ</p>
+              <h2>Все необхідне<br /><em>в одному місці.</em></h2>
+            </div>
+            <p>
+              Від першого ескізу до останнього блоку. Збираємо рішення, які
+              працюють роками.
+            </p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card service-dark">
+              <span class="card-number">01</span>
+              <div class="card-icon">▱</div>
+              <h3>Блоки<br />для парканів</h3>
+              <p>Гладкі, колоті та декоративні фактури для сучасних огорож.</p>
+              <a href="#contact">Дивитися каталог <b>→</b></a>
+            </article>
+            <article class="service-card service-light">
+              <span class="card-number">02</span>
+              <div class="card-icon">⌂</div>
+              <h3>Стовпи<br />та конструкції</h3>
+              <p>Система, у якій кожен елемент точно стає на своє місце.</p>
+              <a href="#contact">Підібрати рішення <b>→</b></a>
+            </article>
+            <article class="service-card service-photo">
+              <span class="card-number">03</span>
+              <div class="service-photo-bg"></div>
+              <div class="service-photo-content">
+                <h3>Монтаж<br />під ключ</h3>
+                <a href="#contact">Як це працює <b>→</b></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="statement">
+        <div class="container">
+          <p class="kicker">BERNSTONE / МАТЕРІАЛ І ФОРМА</p>
+          <h2>Сильні речі<br /><em>не потребують</em><br />зайвого.</h2>
+          <div class="statement-footer">
+            <p>
+              Лаконічна архітектура. Тактильний бетон. Дім, до якого хочеться
+              повертатися.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="projects section" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="kicker">03 / ПРОЄКТИ</p>
+              <h2>Реалізуємо<br /><em>з характером.</em></h2>
+            </div>
+            <a class="under-link" href="#contact">Усі проєкти <b>→</b></a>
+          </div>
+          <div class="project-grid">
+            <article class="project project-wide">
+              <div class="project-photo project-one"></div>
+              <div class="project-caption">
+                <strong>Private house / Буча</strong
+                ><span>Колотий блок · графіт</span>
+              </div>
+            </article>
+            <article class="project">
+              <div class="project-photo project-two"></div>
+              <div class="project-caption">
+                <strong>Garden wall / Київ</strong
+                ><span>Модерн · теплий сірий</span>
+              </div>
+            </article>
+            <article class="project">
+              <div class="project-photo project-three"></div>
+              <div class="project-caption">
+                <strong>Courtyard / Львів</strong
+                ><span>Антік · натуральна фактура</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="numbers">
+        <div class="container numbers-grid">
+          <div>
+            <strong>20<span>+</span></strong>
+            <p>років досвіду<br />у виробництві</p>
+          </div>
+          <div>
+            <strong>7</strong>
+            <p>фактур і<br />колекцій</p>
+          </div>
+          <div>
+            <strong>1–3</strong>
+            <p>дні на монтаж<br />середньої ділянки</p>
+          </div>
+          <div>
+            <strong>100<span>%</span></strong>
+            <p>уваги до<br />вашого проєкту</p>
+          </div>
+        </div>
+      </section>
+      <section class="contact section" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <p class="kicker">04 / ВАШ ПРОЄКТ</p>
+            <h2>Розкажіть<br /><em>нам про нього.</em></h2>
+            <p>
+              Підберемо матеріал, порахуємо кількість блоків і підкажемо
+              оптимальний спосіб монтажу.
+            </p>
+            <a class="phone" href="tel:+380734336003">+38 (073) 433-60-03 ↗</a>
+          </div>
+          <form id="contactForm">
+            <label
+              >Ім'я<input
+                type="text"
+                name="name"
+                placeholder="Ваше ім'я"
+                required /></label
+            ><label
+              >Телефон<input
+                type="tel"
+                name="phone"
+                placeholder="+380"
+                required /></label
+            ><label
+              >Коротко про проєкт<textarea
+                name="message"
+                rows="3"
+                placeholder="Наприклад: паркан 40 м, висота 2 м"
+              ></textarea></label
+            ><button class="button" type="submit">
+              Надіслати запит <span>↗</span>
+            </button>
+            <p id="formStatus" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a class="logo" href="#top"
+          ><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKMAAAAtCAYAAADC1tsoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS6SURBVHhe7ZsNUuMwDIXTvRhwMuBkwMl2/Uoe81aV/JMmqZnRN6NpGsu2ZL8oSRkufwtLkkzAn/UzSR5OijGZhhRjMg0pxmQaUozJNOTbdLI7n5+fy/v7+/ptWZ6enpa3t7f1W0xWxmRXIMSXl5fl9fV1+fj4uBrAuRYpxmRXUBEhQIjvcrlc7fn5uas65m062RWID5LCJ6rj19fX9TyOKdQQiDFJ9qAI7W+pgtdjSItWhPhzrkZWxmRXbGVkNcSzJKjdqlOMya6o2PCsCBHiky811edGiDFJ9gS3ZUgLn7ht87hFVsZBeLsBuOLPghXmN4EqiJi7475K0gFNLYPqI8WjzesTmeK1W6vNzSvTM4v19eCDufqpoQ0+xPOpGfpbanMi5ih3ov7e+Arn8dBxWnYvYWXEA2gvJZmbV3Y8I2gVaaFhjMxdNuXmOQTf9S8ACuJEvMT62uXQdvbDb2aAP1sgT43D+4GXa6FzE/sbHHx1DJ0Xc3IsL3di19DmrXCvPClwnKivYjUwDMTogaYRw5WslOBdv8gUr71mtkrgu+cHa/kq2mbzG4Vj2fk9OGfkq3FFPmxH3PjEfkRwrzw4zhl0/QUGV0Xx/bGyADdXCq/WCO3vWYQ3N0yJqiBRf1azEbx8j4KVDnNGVQ/nWYVauSNuGPantUePZtOfA7EYVhBbNnkLmBs2ejGQkU1hTmcJEfSuI0UGWvlwr1rCfTSb/zZtN4jPUWdhL4YaunFbOLOicK6oKipc81Z8vaJ9NJvF2LNYR2IXtrXQerH0VgitKGdsJOfovXDo11NNmcvMguwWI2+PMLx96YZiUVriRB/Pti6O3YDW/LrBvXOiD/shVub/G2EeU9+qy0uBC5p6zaMk7/pa895StR3jwEfNG1spVeC/Ns6h/XjO+npYHxrOc5wWHAOfERgLPoizh5o/Y1SYv42Z5z04Ts1qOY2w+TatHFktUMVa1bQsxnrUz0iFQH5lra7z6FwYgxXzN8DYt1THItjQduNbk7egSQ3qV7PtJai15zf4ru22P81D+7XMGwPn1IeVgJUExnitby8YS/vaamOhrxcvYXx2LSNq/ozLwn3ReHnOIxrnCLrEGC1OzYcJ0kbQfjWL4orECOz5rWIkzDOKhRwhRo7p+eM8zOLNwRw8onGO4K7bdEliPTruLQ1zlDh/zM45Oq/234MiiPVoP0ZzGvlZjfkftV/3cJcYH5GQ3fzR5x/tP9ubJYRyhli4BrMJcpMYkQQe3JVWxUGfmvWiGwZG+oJ7+npwjL1/9O+5UOgz+gJF/9kuxvBhAE0jhucXpWy66xeZoucxjsWOrc+EALHU2muxjcDnL5jN38KYWn69YzKHyIdjRLA/5uOxR2ucPQlnYRA95i1IbcM9U/Q8xrHohnk+3HiaFaPtr6ZgHIwNw7Ga5ofvLeAz6qvj03Rem7dCnwhvDTzYxnWo2b1sFiMDsBtN0Ob1i0zR81GSdnyNw27mVjHCr5UH5uqBMY342zzUonUh9Kthc/PQ9pbdS/7bwQD6jFk2cj06Hvtse+bcZ5JiTKZhlz8HJskepBiTaUgxJtOQYkymIcWYTEOKMZmGFGMyDSnGZBpSjMk0pBiTSViWfyat07lCWxFhAAAAAElFTkSuQmCC"
+            alt="Bernstone"
+        /></a>
+        <p>Українське виробництво бетонних блоків<br />для парканів та ландшафтного дизайну.</p>
+        <p>Україна, Макарівський район,<br />с. Копилів, вул. Копилівська</p>
+        <p>Пн–Пт: 09:00–18:00<br />Сб: за попереднім записом, 10:00–16:00<br />Нд: вихідний</p>
+        <div class="footer-links">
+          <a href="https://bernstone.shop/products/">КАТАЛОГ</a>
+          <a href="https://bernstone.shop/dealers/">ДИЛЕРИ</a>
+          <a href="https://bernstone.shop/3d-modeli-konfihurator-ohorozh/">3D МОДЕЛІ</a>
+          <a href="https://bernstone.shop/payments-refund/">ОПЛАТА І ДОСТАВКА</a>
+          <a href="https://bernstone.shop/gallery/">ГАЛЕРЕЯ</a>
+          <a href="https://bernstone.shop/about/">ПРО КОМПАНІЮ</a>
+          <a href="https://bernstone.shop/contacts/">КОНТАКТИ</a>
+        </div>
+        <div class="footer-meta">
+          <p><a href="tel:+380734336003">+38 (073) 433-60-03</a></p>
+          <p><a href="https://www.facebook.com/bernstone.bci/">Facebook</a><br />
+          <a href="https://www.instagram.com/bernstone.bci/">Instagram</a><br />
+          <a href="https://www.youtube.com/@Bernstone_UA/">YouTube</a><br />
+          <a href="https://wa.me/380970070774">WhatsApp</a></p>
+          <p>© Всі авторські права належать компанії «Bernstone» і охороняються законом.</p>
+          <p><a href="https://bernstone.shop/">bernstone.shop</a><br />
+          <a href="https://bernstone.com.ua/">bernstone.com.ua</a><br />
+          <a href="https://stonepatio.com.ua/">stonepatio.com.ua</a></p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document
+        .querySelectorAll(".logo img")
+        .forEach((image) => image.removeAttribute("src"));
+    </script>
+    <script>
+      const menuToggle = document.querySelector("#menuToggle"),
+        siteNav = document.querySelector("#siteNav");
+      menuToggle.addEventListener("click", () => {
+        const open = siteNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+      });
+      siteNav.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }),
+      );
+      const form = document.querySelector("#contactForm"),
+        status = document.querySelector("#formStatus");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = form.elements.name.value.trim(),
+          phone = form.elements.phone.value.trim();
+        if (name.length < 2 || phone.replace(/\D/g, "").length < 10) {
+          status.textContent = "Вкажіть ім’я та коректний номер телефону.";
+          status.style.color = "#9b3e2e";
+          return;
+        }
+        status.textContent = "Дякуємо! Ми зв’яжемося з вами найближчим часом.";
+        status.style.color = "#236442";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
